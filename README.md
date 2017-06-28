@@ -10,4 +10,38 @@ source目录中包含了，在Emulator层中和Kernel层中的修改patch，用�
 
 ## Android Emulator项目的下载、应用patch、编译和运行
 
+下载 studio项目，选择版本
+```shell
+mkdir studio-dev
+cd studio-dev
+repo init -u https://android.googlesource.com/platform/manifest -b studio-2.0
+```
+
+下载 编译所需的其他项目
+```shell
+cd studio-dev/external/qemu
+android/scripts/build-mesa.sh
+android/scripts/build-qemu-android.sh
+```
+
+ 编译全部依赖
+ ```shell
+ cd studio-dev/external/qemu
+ ./android-rebuild.sh
+ ```
+ 
+ 应用patch
+ ```shell
+ cd studio-dev/external/qemu
+ unzip qemu.zip
+ 
+ cd studio-dev/external/qemu-android
+ unzip qemu-android.zip
+ ```
+ 
+ 运行模拟器,arm_ranchu_3_10_kernel_readfix可以替换为其他定制内核
+ ```shell
+ ./objs/emulator -avd n5_7.0_arm_2 -kernel kernel_image/arm_ranchu_3_10_kernel_readfix -gpu on -show-kernel
+ ```
+
 ## Android Kernel项目的下载、应用patch、编译和运行
