@@ -41,7 +41,15 @@ android/scripts/build-qemu-android.sh
  
  运行模拟器,arm_ranchu_3_10_kernel_readfix可以替换为其他定制内核
  ```shell
+ cd studio-dev/external/qemu
  ./objs/emulator -avd n5_7.0_arm_2 -kernel kernel_image/arm_ranchu_3_10_kernel_readfix -gpu on -show-kernel
+ ```
+
+ 收集能耗信息
+ ```shell
+  cd studio-dev/external/qemu
+  ./user_client_control
+  输入s开启服务，输入1开始记录，输入0结束记录
  ```
 
 ## Android Kernel项目的下载、应用patch、编译和运行
