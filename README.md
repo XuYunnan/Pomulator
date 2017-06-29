@@ -52,4 +52,12 @@ android/scripts/build-qemu-android.sh
   输入s开启服务，输入1开始记录，输入0结束记录
  ```
 
+估算能耗
+```shell
+cd studio-dev/external/trace
+python predict_energy.py trace.txt
+```
+
 ## Android Kernel项目的下载、应用patch、编译和运行
+Android Kernel项目的下载和搭建环境，可以参考Google的官方文档：https://source.android.com/source/building-kernels
+
