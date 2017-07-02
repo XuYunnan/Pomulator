@@ -60,4 +60,18 @@ python predict_energy.py trace.txt
 
 ## Android Kernel项目的下载、应用patch、编译和运行
 Android Kernel项目的下载和搭建环境，可以参考Google的官方文档：https://source.android.com/source/building-kernels
+，下载Nexus 5对应的内核代码。
+
+应用patch
+ ```shell
+ cd kernel
+ unzip kernel-patch.zip
+ ```
+
+编译
+```shell
+make -j4
+```
+
+
 
